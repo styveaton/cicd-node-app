@@ -127,7 +127,7 @@ pipeline {
     steps {
         sh '''
             ssh -o StrictHostKeyChecking=no ${ANSIBLE_SERVER} \
-            "cd /home/steve/ansible-lab && /home/steve/ansible-venv/bin/ansible-playbook -i inventory deploy-node.yml"
+            "cd /home/steve/ansible-lab && /home/steve/ansible-venv/bin/ansible-playbook -i inventory.ini deploy-node.yml"
         '''
     }
 }
