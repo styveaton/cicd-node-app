@@ -132,7 +132,7 @@ pipeline {
                     ssh \
                     -o StrictHostKeyChecking=no \
                     ${ANSIBLE_SERVER} \
-                    "ansible-playbook /home/steve/ansible-lab/deploy-node.yml"
+                    "ansible-playbook -i /home/steve/ansible-lab/inventory /home/steve/ansible-lab/deploy-node.yml"
 
                 '''
 
