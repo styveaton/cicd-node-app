@@ -9,7 +9,7 @@ pipeline {
 
         DOCKER_IMAGE_TAG = "latest"
 
-        ANSIBLE_SERVER = "root@10.0.0.200"
+        ANSIBLE_SERVER = "steve@10.0.0.200"
 
     }
 
