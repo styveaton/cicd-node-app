@@ -124,21 +124,13 @@ pipeline {
 
 
         stage('Run Ansible Playbook') {
-
-            steps {
-
-                sh '''
-
-                    ssh \
-                    -o StrictHostKeyChecking=no \
-                    ${ANSIBLE_SERVER} \
-                    "ansible-playbook -i /home/steve/ansible-lab/inventory /home/steve/ansible-lab/deploy-node.yml"
-
-                '''
-
-            }
-
-        }
+    steps {
+        sh '''
+            ssh -o StrictHostKeyChecking=no ${ANSIBLE_SERVER} \
+            "cd /home/steve/ansible-lab && /home/steve/ansible-venv/bin/ansible-playbook -i inventory deploy-node.yml"
+        '''
+    }
+}
 
 
         stage('Deploy') {
